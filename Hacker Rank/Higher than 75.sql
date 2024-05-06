@@ -18,3 +18,14 @@ ORDER BY name;
 SELECT name
 FROM Employee
 WHERE salary >2000 and months <10;
+
+
+--Write a query identifying the type of each record in the TRIANGLES table using its three side lengths. Output one of the following statements for each record in the table:
+
+SELECT CASE 
+WHEN a+b <= c or b+c <= a or a+c <=b THEN 'Not A Triangle'
+WHEN a=b and a=c THEN 'Equilateral'
+WHEN a=b or a=c or b=c THEN 'Isosceles'
+WHEN a<>b and b<>c THEN 'Scalene'
+END
+FROM TRIANGLES
