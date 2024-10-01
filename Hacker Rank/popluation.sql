@@ -8,3 +8,8 @@ WHERE POPULATION > 100000;
 SELECT SUM(POPULATION) AS total_population
 FROM CITY
 WHERE DISTRICT = 'California';
+
+-- Query the average population of all cities in CITY where District is California. --
+SELECT AVG(POPULATION) AS average_population
+FROM CITY
+WHERE DISTRICT = 'California';
