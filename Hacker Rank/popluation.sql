@@ -1,4 +1,5 @@
+-- Query a count of the number of cities in CITY having a Population larger than 10000 --
 
-select * 
-from city
-where population > 100000 ;
+SELECT COUNT(*) 
+FROM CITY 
+WHERE POPULATION > 100000;
