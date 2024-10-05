@@ -37,3 +37,13 @@ WSELECT CEIL (AVG (SALARY) - AVG(REPLACE(SALARY, 0, ''))) FROM EMPLOYEES
 -- We define an employee's total earnings to be their monthly  worked, and the maximum total earnings to be the maximum total earnings for any employee in the Employee table. Write a query to find the maximum total earnings for all employees as well as the total number of employees who have maximum total earnings. Then print these values as  space-separated integers.
 
 SELECT months*salary as earnings, COUNT(*) FROM Employee GROUP BY earnings ORDER BY earnings DESC LIMIT 1;
+
+-- Query the following two values from the STATION table:
+
+The sum of all values in LAT_N rounded to a scale of  decimal places.
+The sum of all values in LONG_W rounded to a scale of  decimal places.
+SELECT
+    ROUND(SUM(LAT_N), 2) AS sum_lat_n,
+    ROUND(SUM(LONG_W), 2) AS sum_long_w
+FROM
+    STATION;
