@@ -88,3 +88,13 @@ select round((max(lat_n)-min(lat_n)) + (max(long_w) - min(long_w)),4) from stati
 Query the Euclidean Distance between points  and  and format your answer to display  decimal digits.
 SELECT ROUND(SQRT(POW((MAX(lat_n) - MIN(lat_n)), 2) + POW((MAX(long_w) - MIN(long_w)), 2)), 4) AS distance
 FROM station;
+
+--  weather-observation-station-20 --
+SELECT CAST(LAT_N AS DECIMAL (7,4))
+FROM
+    (SELECT LAT_N, ROW_NUMBER() OVER (ORDER BY LAT_N) as ROWNU 
+     FROM STATION 
+     ) AS X
+WHERE ROWNU = ( SELECT ROUND((COUNT(LAT_N)+1)/2,0) 
+                FROM STATION
+               );
