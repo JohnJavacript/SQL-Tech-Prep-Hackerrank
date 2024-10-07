@@ -98,3 +98,10 @@ FROM
 WHERE ROWNU = ( SELECT ROUND((COUNT(LAT_N)+1)/2,0) 
                 FROM STATION
                );
+
+
+-- african-cities -- 
+SELECT CITY.Name
+FROM CITY
+JOIN COUNTRY ON CITY.CountryCode = COUNTRY.Code
+WHERE COUNTRY.Continent = 'Africa';
